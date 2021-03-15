@@ -1,14 +1,18 @@
 using System;
+using System.Collections.Generic;
 
 namespace GarysWholesaleGarage
 {
-    public class Zero : Vehicle // Electric motorcycle
+    public class Zero : Vehicle, IElectricVehicle // Electric motorcycle
     {
         public double BatteryKWh { get; set; }
 
+        public int CurrentChargePercentage { get; set; }
+
         public void ChargeBattery()
         {
-            // method definition omitted
+            Console.WriteLine("Charging battery");
+            CurrentChargePercentage = 100;
         }
 
         public override void Drive()
